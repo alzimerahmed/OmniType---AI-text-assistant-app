@@ -65,7 +65,7 @@ fun CommandsScreen() {
             OutlinedTextField(
                 value = prompt,
                 onValueChange = { prompt = it },
-                label = { Text("Prompt (must ask for JUST modified text)") },
+                label = { Text("Prompt (e.g., Rewrite as a poem)") },
                 modifier = Modifier.fillMaxWidth().height(100.dp),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = MaterialTheme.colorScheme.primary,

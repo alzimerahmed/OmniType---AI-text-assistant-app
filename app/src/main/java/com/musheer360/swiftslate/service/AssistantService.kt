@@ -54,6 +54,8 @@ class AssistantService : AccessibilityService() {
     private val serviceScope = CoroutineScope(serviceJob + Dispatchers.IO)
     @Volatile
     private var isProcessing = false
+    @Volatile
+    private var processingStartedAt = 0L
     private val handler = Handler(Looper.getMainLooper())
     private var triggerLastChars = setOf<Char>()
     private var cachedPrefix = CommandManager.DEFAULT_PREFIX
@@ -74,6 +76,7 @@ class AssistantService : AccessibilityService() {
     private companion object {
         const val TRIGGER_REFRESH_INTERVAL_MS = 5_000L
         const val DEFAULT_TEMPERATURE = 0.5
+        const val PROCESSING_WATCHDOG_MS = 120_000L
         val SPINNER_FRAMES = arrayOf("◐", "◓", "◑", "◒")
         const val TOAST_BACKGROUND_COLOR = 0xE6323232.toInt()
         const val TOAST_DURATION_MS = 3500L
@@ -97,7 +100,14 @@ class AssistantService : AccessibilityService() {
     }
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
-        if (event?.eventType != AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED || isProcessing) return
+        if (event?.eventType != AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED) return
+
+        if (isProcessing && processingStartedAt > 0L &&
+            System.currentTimeMillis() - processingStartedAt > PROCESSING_WATCHDOG_MS) {
+            currentJob?.cancel()
+        }
+
+        if (isProcessing) return
         val source = event.source ?: return
         val text = source.text?.toString() ?: return
         if (text.isEmpty()) return
@@ -120,6 +130,7 @@ class AssistantService : AccessibilityService() {
         if (command.trigger.endsWith("undo") && command.isBuiltIn) {
             if (source.isPassword) { return }
             isProcessing = true
+            processingStartedAt = System.currentTimeMillis()
             currentJob?.cancel()
             handleUndo(source, cleanText)
             return
@@ -128,6 +139,7 @@ class AssistantService : AccessibilityService() {
         if (cleanText.isEmpty() || source.isPassword) { return }
 
         isProcessing = true
+        processingStartedAt = System.currentTimeMillis()
         currentJob?.cancel()
         processCommand(source, cleanText, command)
     }
@@ -153,6 +165,7 @@ class AssistantService : AccessibilityService() {
             endpoint = ""
         }
         val temperature = DEFAULT_TEMPERATURE
+        val useStructuredOutput = !prefs.getBoolean("structured_output_disabled", false)
 
         currentJob = serviceScope.launch {
             val originalText = text
@@ -172,9 +185,9 @@ class AssistantService : AccessibilityService() {
                         }
 
                         val result = if (providerType == "custom") {
-                            openAIClient.generate(command.prompt, text, key, model, temperature, endpoint)
+                            openAIClient.generate(command.prompt, text, key, model, temperature, endpoint, useStructuredOutput)
                         } else {
-                            client.generate(command.prompt, text, key, model, temperature)
+                            client.generate(command.prompt, text, key, model, temperature, useStructuredOutput)
                         }
 
                         if (result.isSuccess) {
@@ -183,6 +196,15 @@ class AssistantService : AccessibilityService() {
                             lastOriginalText = originalText
                             replaceText(source, result.getOrThrow())
                             performHapticFeedback(HapticFeedbackConstants.CONFIRM)
+                            if (providerType == "custom") {
+                                if (openAIClient.structuredOutputFailed) {
+                                    prefs.edit().putBoolean("structured_output_disabled", true).apply()
+                                }
+                            } else {
+                                if (client.structuredOutputFailed) {
+                                    prefs.edit().putBoolean("structured_output_disabled", true).apply()
+                                }
+                            }
                             succeeded = true
                             break
                         }
@@ -237,6 +259,7 @@ class AssistantService : AccessibilityService() {
             } finally {
                 withContext(NonCancellable + Dispatchers.Main) {
                     spinnerJob?.cancel()
+                    processingStartedAt = 0L
                     if (!handler.postDelayed({ isProcessing = false }, 500)) {
                         isProcessing = false
                     }
@@ -264,6 +287,7 @@ class AssistantService : AccessibilityService() {
                 showToast("Could not undo")
             } finally {
                 withContext(NonCancellable + Dispatchers.Main) {
+                    processingStartedAt = 0L
                     if (!handler.postDelayed({ isProcessing = false }, 500)) {
                         isProcessing = false
                     }
@@ -452,6 +476,7 @@ class AssistantService : AccessibilityService() {
 
     override fun onInterrupt() {
         isProcessing = false
+        processingStartedAt = 0L
         currentJob?.cancel()
     }
 

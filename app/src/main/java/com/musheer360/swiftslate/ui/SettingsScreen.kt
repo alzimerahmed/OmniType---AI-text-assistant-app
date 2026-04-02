@@ -81,7 +81,7 @@ fun SettingsScreen() {
                         onClick = {
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                             providerType = "gemini"
-                            prefs.edit().putString("provider_type", "gemini").apply()
+                            prefs.edit().putString("provider_type", "gemini").remove("structured_output_disabled").apply()
                             providerExpanded = false
                         }
                     )
@@ -90,7 +90,7 @@ fun SettingsScreen() {
                         onClick = {
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                             providerType = "custom"
-                            prefs.edit().putString("provider_type", "custom").apply()
+                            prefs.edit().putString("provider_type", "custom").remove("structured_output_disabled").apply()
                             providerExpanded = false
                         }
                     )
@@ -134,7 +134,7 @@ fun SettingsScreen() {
                                 onClick = {
                                     haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                                     selectedModel = model
-                                    prefs.edit().putString("model", model).apply()
+                                    prefs.edit().putString("model", model).remove("structured_output_disabled").apply()
                                     modelExpanded = false
                                 }
                             )
@@ -162,7 +162,7 @@ fun SettingsScreen() {
                     value = customEndpoint,
                     onValueChange = {
                         customEndpoint = it
-                        prefs.edit().putString("custom_endpoint", it).apply()
+                        prefs.edit().putString("custom_endpoint", it).remove("structured_output_disabled").apply()
                     },
                     placeholder = { Text("https://api.example.com/v1") },
                     singleLine = true,
@@ -195,7 +195,7 @@ fun SettingsScreen() {
                     value = customModel,
                     onValueChange = {
                         customModel = it
-                        prefs.edit().putString("custom_model", it).apply()
+                        prefs.edit().putString("custom_model", it).remove("structured_output_disabled").apply()
                     },
                     placeholder = { Text("gpt-4o, claude-3-haiku, etc.") },
                     singleLine = true,

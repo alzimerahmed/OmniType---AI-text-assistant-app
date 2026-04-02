@@ -268,14 +268,14 @@ Go beyond the built-ins — create your own trigger → prompt pairs in the **Co
 
 | Trigger | Prompt | Use Case |
 |:--------|:-------|:---------|
-| `?eli5` | `Explain this like I'm five years old and return ONLY the modified text.` | Simplify complex topics |
-| `?bullet` | `Convert this text into bullet points and return ONLY the modified text.` | Quick formatting |
-| `?headline` | `Rewrite this as a catchy headline and return ONLY the modified text.` | Social media posts |
-| `?code` | `Convert this description into pseudocode and return ONLY the modified text.` | Developer shorthand |
-| `?tldr` | `Summarize this text in one sentence and return ONLY the modified text.` | Quick summaries |
+| `?eli5` | `Explain this like I'm five years old.` | Simplify complex topics |
+| `?bullet` | `Convert this text into bullet points.` | Quick formatting |
+| `?headline` | `Rewrite this as a catchy headline.` | Social media posts |
+| `?code` | `Convert this description into pseudocode.` | Developer shorthand |
+| `?tldr` | `Summarize this text in one sentence.` | Quick summaries |
 
-> [!IMPORTANT]
-> Always include **"return ONLY the modified text"** in your prompt to ensure clean output without extra commentary from the AI.
+> [!TIP]
+> Just describe the transformation you want — SwiftSlate's system instruction automatically ensures the AI returns only the transformed text without extra commentary.
 
 <br>
 
