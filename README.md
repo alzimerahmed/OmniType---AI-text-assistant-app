@@ -59,6 +59,7 @@ Type a trigger like **`?fix`** at the end of any text, in any app, and watch it 
 - [Building from Source](#-building-from-source)
 - [Known Limitations](#%EF%B8%8F-known-limitations)
 - [Contributing](#-contributing)
+- [Support the Project](#-support-the-project)
 - [License](#-license)
 
 <br>
@@ -534,6 +535,15 @@ git push origin feature/amazing-feature
 
 <br>
 
+## ❤️ Support the Project
+
+SwiftSlate is free, open source, and built in my spare time. If it's useful to you, consider supporting its development:
+
+- ⭐ **Star this repo** — it helps others discover SwiftSlate
+- 💖 [**Sponsor on GitHub**](https://github.com/sponsors/Musheer360) — even a small contribution keeps the project going
+
+<br>
+
 ## 📄 License
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
@@ -548,7 +558,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 Made with ❤️ by [**Musheer Alam**](https://github.com/Musheer360)
 
-If SwiftSlate saves you time, a ⭐ or [sponsorship](https://github.com/sponsors/Musheer360) means a lot
+If SwiftSlate makes your typing life easier, consider giving it a ⭐
 
 <br>
 
