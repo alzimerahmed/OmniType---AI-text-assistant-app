@@ -103,6 +103,7 @@ class AssistantService : AccessibilityService() {
 
     override fun onAccessibilityEvent(event: AccessibilityEvent?) {
         if (event?.eventType != AccessibilityEvent.TYPE_VIEW_TEXT_CHANGED) return
+        if (event.packageName?.toString() == packageName) return
 
         if (isProcessing && processingStartedAt > 0L &&
             System.currentTimeMillis() - processingStartedAt > PROCESSING_WATCHDOG_MS) {
