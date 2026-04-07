@@ -7,14 +7,18 @@ import android.net.Uri
 import android.provider.Settings
 import android.view.accessibility.AccessibilityManager
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -29,7 +33,9 @@ import com.musheer360.swiftslate.R
 import com.musheer360.swiftslate.manager.CommandManager
 import com.musheer360.swiftslate.manager.KeyManager
 import com.musheer360.swiftslate.ui.components.ScreenTitle
+import com.musheer360.swiftslate.ui.components.SectionHeader
 import com.musheer360.swiftslate.ui.components.SlateCard
+import com.musheer360.swiftslate.ui.components.SlateDivider
 import kotlinx.coroutines.delay
 
 private fun checkServiceEnabled(context: Context): Boolean {
@@ -50,8 +56,6 @@ fun DashboardScreen() {
     var keyCount by remember { mutableIntStateOf(keyManager.getKeys().size) }
     var currentPrefix by remember { mutableStateOf(commandManager.getTriggerPrefix()) }
 
-    // Use the Activity lifecycle so polling only restarts when the app returns
-    // from the background, not when switching between navbar tabs.
     val lifecycleOwner = LocalLifecycleOwner.current
 
     LaunchedEffect(lifecycleOwner) {
@@ -73,107 +77,114 @@ fun DashboardScreen() {
         modifier = Modifier
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-            .padding(24.dp)
+            .padding(horizontal = 20.dp, vertical = 16.dp)
     ) {
         ScreenTitle(stringResource(R.string.dashboard_title))
 
+        SectionHeader(stringResource(R.string.service_status_title))
         SlateCard {
-            Text(
-                text = stringResource(R.string.service_status_title),
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            Spacer(modifier = Modifier.height(12.dp))
             Row(
+                modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween,
-                modifier = Modifier.fillMaxWidth()
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = if (isServiceEnabled) stringResource(R.string.service_status_active) else stringResource(R.string.service_status_inactive),
-                    color = if (isServiceEnabled) MaterialTheme.colorScheme.tertiary else MaterialTheme.colorScheme.error,
-                    fontWeight = FontWeight.Bold
-                )
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Box(
+                        modifier = Modifier
+                            .size(8.dp)
+                            .clip(CircleShape)
+                            .background(
+                                if (isServiceEnabled) MaterialTheme.colorScheme.tertiary
+                                else MaterialTheme.colorScheme.error
+                            )
+                    )
+                    Spacer(modifier = Modifier.width(10.dp))
+                    Text(
+                        text = if (isServiceEnabled) stringResource(R.string.service_status_active)
+                        else stringResource(R.string.service_status_inactive),
+                        fontSize = 15.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                }
                 if (!isServiceEnabled) {
                     Button(
                         onClick = {
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                             context.startActivity(Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS))
                         },
-                        colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
+                        shape = RoundedCornerShape(10.dp),
+                        colors = ButtonDefaults.buttonColors(
+                            containerColor = MaterialTheme.colorScheme.primary
+                        )
                     ) {
-                        Text(stringResource(R.string.service_enable), color = MaterialTheme.colorScheme.onPrimaryContainer)
+                        Text(
+                            stringResource(R.string.service_enable),
+                            color = MaterialTheme.colorScheme.onPrimary
+                        )
                     }
                 }
             }
-        }
 
-        Spacer(modifier = Modifier.height(12.dp))
-
-        SlateCard {
-            Text(
-                text = stringResource(R.string.dashboard_api_keys_title),
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                color = MaterialTheme.colorScheme.onSurface
-            )
+            SlateDivider()
             Spacer(modifier = Modifier.height(12.dp))
-            Text(
-                text = stringResource(R.string.dashboard_keys_configured, keyCount),
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                fontSize = 16.sp
-            )
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Text(
+                    text = stringResource(R.string.dashboard_api_keys_title),
+                    fontSize = 15.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+                Text(
+                    text = stringResource(R.string.dashboard_keys_configured, keyCount),
+                    fontSize = 15.sp,
+                    color = MaterialTheme.colorScheme.onSurface
+                )
+            }
             if (keyCount == 0) {
                 Text(
                     text = stringResource(R.string.dashboard_add_key_hint),
                     color = MaterialTheme.colorScheme.tertiaryContainer,
                     fontSize = 13.sp,
-                    modifier = Modifier.padding(top = 8.dp)
+                    modifier = Modifier.padding(top = 6.dp)
                 )
             }
         }
 
-        Spacer(modifier = Modifier.height(12.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
+        SectionHeader(stringResource(R.string.dashboard_how_to_use_title))
         SlateCard {
-            Text(
-                text = stringResource(R.string.dashboard_how_to_use_title),
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            Spacer(modifier = Modifier.height(12.dp))
             Text(
                 text = stringResource(R.string.dashboard_how_to_use_body, currentPrefix),
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
-                fontSize = 16.sp,
-                lineHeight = 22.sp
+                fontSize = 15.sp,
+                lineHeight = 24.sp
             )
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(32.dp))
 
-        Column(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = stringResource(R.string.dashboard_version, BuildConfig.VERSION_NAME),
-                fontSize = 13.sp,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
-            )
-            Spacer(modifier = Modifier.height(4.dp))
-            Text(
-                text = stringResource(R.string.dashboard_github),
-                fontSize = 13.sp,
-                color = MaterialTheme.colorScheme.primary,
-                modifier = Modifier
-                    .clickable {
-                        context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Musheer360/SwiftSlate")))
-                    }
-                    .padding(vertical = 8.dp)
-            )
-        }
+        Text(
+            text = stringResource(R.string.dashboard_version, BuildConfig.VERSION_NAME),
+            fontSize = 13.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+        Text(
+            text = stringResource(R.string.dashboard_github),
+            fontSize = 13.sp,
+            color = MaterialTheme.colorScheme.primary,
+            modifier = Modifier
+                .clickable {
+                    context.startActivity(
+                        Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Musheer360/SwiftSlate"))
+                    )
+                }
+                .padding(vertical = 8.dp)
+        )
 
         Spacer(modifier = Modifier.height(16.dp))
     }

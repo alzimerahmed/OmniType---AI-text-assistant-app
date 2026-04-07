@@ -2,7 +2,8 @@ package com.musheer360.swiftslate.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
@@ -24,7 +25,10 @@ import com.musheer360.swiftslate.manager.CommandManager
 import com.musheer360.swiftslate.model.Command
 import com.musheer360.swiftslate.model.CommandType
 import com.musheer360.swiftslate.ui.components.ScreenTitle
+import com.musheer360.swiftslate.ui.components.SectionHeader
 import com.musheer360.swiftslate.ui.components.SlateCard
+import com.musheer360.swiftslate.ui.components.SlateDivider
+import com.musheer360.swiftslate.ui.components.SlateTextField
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -46,21 +50,14 @@ fun CommandsScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 24.dp)
-            .padding(top = 24.dp)
+            .padding(horizontal = 20.dp, vertical = 16.dp)
     ) {
         ScreenTitle(stringResource(R.string.commands_title))
 
+        SectionHeader(stringResource(R.string.commands_add_custom_title))
         SlateCard {
-            Text(
-                text = stringResource(R.string.commands_add_custom_title),
-                fontWeight = FontWeight.Bold,
-                fontSize = 18.sp,
-                color = MaterialTheme.colorScheme.onSurface
-            )
-            Spacer(modifier = Modifier.height(12.dp))
             SingleChoiceSegmentedButtonRow(
-                modifier = Modifier.fillMaxWidth().padding(bottom = 12.dp)
+                modifier = Modifier.fillMaxWidth()
             ) {
                 SegmentedButton(
                     selected = selectedType == CommandType.AI,
@@ -83,26 +80,25 @@ fun CommandsScreen() {
                     Text(stringResource(R.string.commands_type_replacer))
                 }
             }
-            OutlinedTextField(
+            Spacer(modifier = Modifier.height(12.dp))
+            SlateTextField(
                 value = trigger,
                 onValueChange = {
                     trigger = it
                     errorMessage = null
                 },
                 label = { Text(stringResource(R.string.commands_trigger_label, prefix)) },
-                singleLine = true,
-                modifier = Modifier.fillMaxWidth(),
-                colors = OutlinedTextFieldDefaults.colors(
-                    focusedBorderColor = MaterialTheme.colorScheme.primary,
-                    unfocusedBorderColor = MaterialTheme.colorScheme.outline
-                )
+                singleLine = true
             )
             Spacer(modifier = Modifier.height(8.dp))
             OutlinedTextField(
                 value = prompt,
                 onValueChange = { prompt = it },
                 label = { Text(if (selectedType == CommandType.AI) stringResource(R.string.commands_prompt_label) else stringResource(R.string.commands_replacement_label)) },
-                modifier = Modifier.fillMaxWidth().height(100.dp),
+                shape = RoundedCornerShape(10.dp),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(100.dp),
                 colors = OutlinedTextFieldDefaults.colors(
                     focusedBorderColor = MaterialTheme.colorScheme.primary,
                     unfocusedBorderColor = MaterialTheme.colorScheme.outline
@@ -165,94 +161,116 @@ fun CommandsScreen() {
                             selectedType = CommandType.AI
                         }
                     },
-                    enabled = trigger.isNotBlank() && trigger.trim() != prefix && prompt.isNotBlank()
+                    enabled = trigger.isNotBlank() && trigger.trim() != prefix && prompt.isNotBlank(),
+                    shape = RoundedCornerShape(10.dp)
                 ) {
                     Text(if (editingTrigger != null) stringResource(R.string.commands_save_command) else stringResource(R.string.commands_add_command))
                 }
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
-        LazyColumn(
-            modifier = Modifier.weight(1f),
-            verticalArrangement = Arrangement.spacedBy(12.dp),
-            contentPadding = PaddingValues(bottom = 24.dp)
-        ) {
-            items(commands, key = { it.trigger }) { cmd ->
-                SlateCard {
-                    Row(
-                        modifier = Modifier.fillMaxWidth().semantics(mergeDescendants = true) {},
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Column(modifier = Modifier.weight(1f)) {
-                            Text(
-                                text = cmd.trigger,
-                                fontWeight = FontWeight.Bold,
-                                fontSize = 16.sp,
-                                color = MaterialTheme.colorScheme.primary
-                            )
-                            Spacer(modifier = Modifier.height(4.dp))
-                            if (cmd.type == CommandType.TEXT_REPLACER) {
-                                Text(
-                                    text = stringResource(R.string.commands_type_replacer),
-                                    fontSize = 12.sp,
-                                    color = MaterialTheme.colorScheme.tertiary
-                                )
+        if (commands.isNotEmpty()) {
+            SectionHeader(stringResource(R.string.commands_title))
+            SlateCard {
+                LazyColumn(
+                    modifier = Modifier.weight(1f)
+                ) {
+                    itemsIndexed(commands, key = { _, cmd -> cmd.trigger }) { index, cmd ->
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(vertical = 12.dp)
+                                .semantics(mergeDescendants = true) {},
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            Column(modifier = Modifier.weight(1f)) {
+                                Row(verticalAlignment = Alignment.CenterVertically) {
+                                    Text(
+                                        text = cmd.trigger,
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 15.sp,
+                                        color = MaterialTheme.colorScheme.primary
+                                    )
+                                    if (cmd.isBuiltIn) {
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Text(
+                                            text = stringResource(R.string.commands_built_in),
+                                            fontSize = 11.sp,
+                                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                                        )
+                                    }
+                                    if (cmd.type == CommandType.TEXT_REPLACER) {
+                                        Spacer(modifier = Modifier.width(8.dp))
+                                        Text(
+                                            text = stringResource(R.string.commands_type_replacer),
+                                            fontSize = 11.sp,
+                                            color = MaterialTheme.colorScheme.tertiary
+                                        )
+                                    }
+                                }
                                 Spacer(modifier = Modifier.height(2.dp))
-                            }
-                            Text(
-                                text = cmd.prompt,
-                                fontSize = 14.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            if (cmd.isBuiltIn) {
-                                Spacer(modifier = Modifier.height(4.dp))
                                 Text(
-                                    text = stringResource(R.string.commands_built_in),
-                                    fontSize = 12.sp,
-                                    color = MaterialTheme.colorScheme.tertiary
+                                    text = cmd.prompt,
+                                    fontSize = 13.sp,
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
+                            }
+                            if (!cmd.isBuiltIn) {
+                                IconButton(
+                                    onClick = {
+                                        haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                        trigger = cmd.trigger
+                                        prompt = cmd.prompt
+                                        selectedType = cmd.type
+                                        editingTrigger = cmd.trigger
+                                        errorMessage = null
+                                    },
+                                    modifier = Modifier.size(36.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Edit,
+                                        contentDescription = stringResource(R.string.commands_edit_command),
+                                        tint = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                }
+                                IconButton(
+                                    onClick = {
+                                        haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                                        commandManager.removeCustomCommand(cmd.trigger)
+                                        if (editingTrigger == cmd.trigger) {
+                                            trigger = ""
+                                            prompt = ""
+                                            errorMessage = null
+                                            editingTrigger = null
+                                            selectedType = CommandType.AI
+                                        }
+                                        commands = commandManager.getCommands()
+                                    },
+                                    modifier = Modifier.size(36.dp)
+                                ) {
+                                    Icon(
+                                        imageVector = Icons.Default.Delete,
+                                        contentDescription = stringResource(R.string.commands_delete_command),
+                                        tint = MaterialTheme.colorScheme.error,
+                                        modifier = Modifier.size(20.dp)
+                                    )
+                                }
                             }
                         }
-                        if (!cmd.isBuiltIn) {
-                            IconButton(onClick = {
-                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                                trigger = cmd.trigger
-                                prompt = cmd.prompt
-                                selectedType = cmd.type
-                                editingTrigger = cmd.trigger
-                                errorMessage = null
-                            }) {
-                                Icon(
-                                    imageVector = Icons.Default.Edit,
-                                    contentDescription = stringResource(R.string.commands_edit_command),
-                                    tint = MaterialTheme.colorScheme.primary
-                                )
-                            }
-                            IconButton(onClick = {
-                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                                commandManager.removeCustomCommand(cmd.trigger)
-                                if (editingTrigger == cmd.trigger) {
-                                    trigger = ""
-                                    prompt = ""
-                                    errorMessage = null
-                                    editingTrigger = null
-                                    selectedType = CommandType.AI
-                                }
-                                commands = commandManager.getCommands()
-                            }) {
-                                Icon(
-                                    imageVector = Icons.Default.Delete,
-                                    contentDescription = stringResource(R.string.commands_delete_command),
-                                    tint = MaterialTheme.colorScheme.error
-                                )
-                            }
+                        if (index < commands.lastIndex) {
+                            SlateDivider()
                         }
                     }
                 }
             }
+        } else {
+            Spacer(modifier = Modifier.weight(1f))
         }
+
+        Spacer(modifier = Modifier.height(24.dp))
     }
 }
