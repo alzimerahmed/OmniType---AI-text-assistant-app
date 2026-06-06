@@ -1,29 +1,29 @@
 # Code of Conduct
 
-## The Short Version
+## Our Pledge
 
-Be respectful. Don't be a clown.
+We are committed to making participation in this project a harassment-free experience for everyone, regardless of background or experience level.
 
 ## Standards
 
-**Welcome:**
-- Constructive bug reports and feature requests
-- Respectful discussion about the project
-- Pull requests that follow the contributing guide
+**Expected behavior:**
+- Being respectful and constructive in discussions
+- Providing and gracefully accepting feedback
+- Focusing on what's best for the project and its users
 
-**Not welcome:**
+**Unacceptable behavior:**
 - Harassment, insults, or personal attacks
-- Spam, off-topic issues, or demanding maintainer action (e.g., telling me to contact someone on your behalf)
-- Publishing others' private information
-- Any conduct that makes this space hostile
+- Spam or off-topic content
+- Publishing others' private information without consent
+- Any conduct that creates a hostile environment
 
 ## Enforcement
 
-Issues or comments that violate this will be deleted. Repeat offenders will be blocked. This is a one-person project — I don't have time for nonsense.
+Violations may result in comments being removed, issues being locked, or users being blocked at the maintainer's discretion.
 
 ## Scope
 
-Applies to all interactions in this repository: issues, PRs, discussions, and comments.
+This applies to all project spaces: issues, pull requests, discussions, and comments.
 
 ## Contact
 
