@@ -132,7 +132,7 @@ App UI available in English, French, German, Spanish, Portuguese (BR), Hindi, an
 
 ## 🧩 Built-in Commands
 
-SwiftSlate ships with **10 AI-powered commands** plus dynamic translation — ready to use out of the box:
+SwiftSlate ships with **10 AI-powered commands**, dynamic translation, and **4 clipboard commands** — ready to use out of the box:
 
 | Trigger | Action | Example |
 |:--------|:-------|:--------|
@@ -166,6 +166,20 @@ Use any standard language code with `?translate:XX`:
 …and many more. Any ISO 639 language code works — the AI model handles it.
 
 </details>
+
+### 📋 Clipboard Commands
+
+SwiftSlate also includes **4 clipboard commands** that work entirely offline using an **internal clipboard** (not the Android system clipboard):
+
+| Trigger | Action | Example |
+|:--------|:-------|:--------|
+| **`?copy`** | Copy preceding text to internal clipboard | `Hello world?copy` → copies "Hello world" |
+| **`?cut`** | Cut preceding text (copy + delete) | `Hello world?cut` → cuts "Hello world" |
+| **`?paste`** | Paste after existing text | Type `?paste` → appends last copied/cut text |
+| **`?replace`** | Replace all text with clipboard content | Type `?replace` → replaces field content with last copied/cut text |
+
+> [!IMPORTANT]
+> These commands use SwiftSlate's own internal clipboard, **not** the Android system clipboard. Due to Android 13+ restrictions, accessibility services cannot read the system clipboard. You must use `?copy` or `?cut` within SwiftSlate first — then `?paste` or `?replace` will work in any text field.
 
 <br>
 
