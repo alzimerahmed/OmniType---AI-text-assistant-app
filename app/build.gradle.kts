@@ -7,7 +7,7 @@ val baseVersion = "1.0"
 
 android {
     namespace = "com.musheer360.swiftslate"
-    compileSdk = 36
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.musheer360.swiftslate"
