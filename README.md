@@ -20,6 +20,7 @@ Type a trigger like **`?fix`** at the end of any text, in any app, and watch it 
 [![License: MIT](https://img.shields.io/badge/MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
 [![Latest Release](https://img.shields.io/github/v/release/Musheer360/SwiftSlate?style=flat-square&label=Latest&color=brightgreen)](https://github.com/Musheer360/SwiftSlate/releases/latest)
+[![F-Droid](https://img.shields.io/f-droid/v/com.musheer360.swiftslate?style=flat-square)](https://f-droid.org/en/packages/com.musheer360.swiftslate/)
 [![GitHub Stars](https://img.shields.io/github/stars/Musheer360/SwiftSlate?style=flat-square&color=yellow)](https://github.com/Musheer360/SwiftSlate/stargazers)
 [![APK Size](https://img.shields.io/badge/APK_Size-~1.2_MB-blue?style=flat-square)](#)
 [![API 23+](https://img.shields.io/badge/Min_SDK-API_23-orange?style=flat-square)](#)
@@ -28,8 +29,6 @@ Type a trigger like **`?fix`** at the end of any text, in any app, and watch it 
 <br>
 
 [<img src="https://img.shields.io/badge/⬇_Download_APK-282828?style=for-the-badge" alt="Download APK" height="36">](https://github.com/Musheer360/SwiftSlate/releases/latest)
-&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/F--Droid-1976D2?style=for-the-badge&logo=f-droid&logoColor=white" alt="Get it on F-Droid" height="36">](https://f-droid.org/en/packages/com.musheer360.swiftslate/)
 &nbsp;&nbsp;
 [<img src="https://img.shields.io/badge/🐛_Report_Bug-282828?style=for-the-badge" alt="Report Bug" height="36">](https://github.com/Musheer360/SwiftSlate/issues)
 &nbsp;&nbsp;
