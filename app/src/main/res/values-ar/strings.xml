@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwiftSlate</string>
-    <string name="accessibility_service_label">مساعد SwiftSlate</string>
+    <string name="app_name">OmniType</string>
+    <string name="accessibility_service_label">مساعد OmniType</string>
     <string name="accessibility_service_desc">يوفر استبدالات نصية مدعومة بالذكاء الاصطناعي على مستوى النظام عند كتابة أوامر التشغيل.</string>
 
     <!-- Dashboard -->
@@ -78,7 +78,7 @@
     <string name="backup_import_confirm">سيؤدي هذا إلى استبدال جميع أوامرك المخصصة الحالية. هل ترغب في المتابعة؟</string>
     <string name="backup_import_cancel">إلغاء</string>
     <string name="settings_check_updates">التحقق من التحديثات</string>
-    <string name="settings_made_by">صُنع بحب بواسطة Musheer Alam</string>
+    <string name="settings_made_by">صُنع بحب بواسطة Alzimer Ahmed</string>
     <string name="settings_sponsor">دعم على GitHub</string>
     <string name="commands_collapse">طي</string>
     <string name="commands_expand">توسيع</string>
@@ -106,7 +106,7 @@
     <string name="process_text_retry">إعادة المحاولة</string>
     <string name="process_text_copied">تم النسخ</string>
     <string name="process_text_no_selection">لم يتم تحديد نص</string>
-    <string name="process_text_no_commands">لا توجد أوامر متاحة. أضف أمرًا في SwiftSlate.</string>
+    <string name="process_text_no_commands">لا توجد أوامر متاحة. أضف أمرًا في OmniType.</string>
     <string name="toast_restore_failed">تعذّر استعادة النص الأصلي</string>
     <string name="toast_nothing_to_undo">لا يوجد شيء للتراجع عنه</string>
     <string name="toast_undo_failed">تعذّر التراجع</string>
@@ -130,8 +130,8 @@
 
     <!-- Updates -->
     <string name="update_channel_name">تحديثات التطبيق</string>
-    <string name="update_channel_desc">يُعلمك عند توفر إصدار جديد من SwiftSlate</string>
-    <string name="update_available_title">يتوفر تحديث لـ SwiftSlate</string>
+    <string name="update_channel_desc">يُعلمك عند توفر إصدار جديد من OmniType</string>
+    <string name="update_available_title">يتوفر تحديث لـ OmniType</string>
     <string name="update_available_text">انقر لعرض أحدث إصدار</string>
 
     <!-- Command descriptions -->
@@ -144,7 +144,7 @@
     <string name="settings_fetch_models_success">تم تحميل %1$d نموذجاً</string>
     <string name="settings_fetch_models_empty">لم يتم العثور على نماذج. يمكنك إدخال اسم نموذج يدوياً.</string>
     <string name="settings_fetch_models_failed">تعذّر جلب النماذج. تحقق من عنوان الخادم ومفتاح API.</string>
-    <string name="dashboard_service_killed_title">تمت مقاطعة SwiftSlate</string>
+    <string name="dashboard_service_killed_title">تمت مقاطعة OmniType</string>
     <string name="dashboard_service_killed_message">توقفت خدمة الخلفية بشكل غير متوقع. أعد تفعيلها في إعدادات إمكانية الوصول لمواصلة استخدام الأوامر.</string>
     <string name="dashboard_service_killed_dismiss">تجاهل</string>
 </resources>

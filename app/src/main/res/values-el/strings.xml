@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SwiftSlate</string>
-    <string name="accessibility_service_label">Βοηθός SwiftSlate</string>
+    <string name="app_name">OmniType</string>
+    <string name="accessibility_service_label">Βοηθός OmniType</string>
     <string name="accessibility_service_desc">Παρέχει αντικαταστάσεις κειμένου με AI σε όλο το σύστημα όταν πληκτρολογούνται εντολές ενεργοποίησης.</string>
 
     <!-- Dashboard -->
@@ -78,7 +78,7 @@
     <string name="backup_import_confirm">Αυτό θα αντικαταστήσει όλες τις υπάρχουσες προσαρμοσμένες εντολές σας. Θέλετε να συνεχίσετε;</string>
     <string name="backup_import_cancel">Ακύρωση</string>
     <string name="settings_check_updates">Έλεγχος για ενημερώσεις</string>
-    <string name="settings_made_by">Φτιαγμένο με αγάπη από τον Musheer Alam</string>
+    <string name="settings_made_by">Φτιαγμένο με αγάπη από τον Alzimer Ahmed</string>
     <string name="settings_sponsor">Υποστήριξη στο GitHub</string>
     <string name="commands_collapse">Σύμπτυξη</string>
     <string name="commands_expand">Επέκταση</string>
@@ -106,7 +106,7 @@
     <string name="process_text_retry">Δοκιμάστε ξανά</string>
     <string name="process_text_copied">Αντιγράφηκε</string>
     <string name="process_text_no_selection">Δεν έχει επιλεγεί κείμενο</string>
-    <string name="process_text_no_commands">Δεν υπάρχουν διαθέσιμες εντολές. Προσθέστε μία στο SwiftSlate.</string>
+    <string name="process_text_no_commands">Δεν υπάρχουν διαθέσιμες εντολές. Προσθέστε μία στο OmniType.</string>
     <string name="toast_restore_failed">Δεν ήταν δυνατή η επαναφορά του αρχικού κειμένου</string>
     <string name="toast_nothing_to_undo">Δεν υπάρχει τίποτα για αναίρεση</string>
     <string name="toast_undo_failed">Δεν ήταν δυνατή η αναίρεση</string>
@@ -130,8 +130,8 @@
 
     <!-- Updates -->
     <string name="update_channel_name">Ενημερώσεις εφαρμογής</string>
-    <string name="update_channel_desc">Ειδοποιεί όταν είναι διαθέσιμη μια νέα έκδοση του SwiftSlate</string>
-    <string name="update_available_title">Διαθέσιμη ενημέρωση SwiftSlate</string>
+    <string name="update_channel_desc">Ειδοποιεί όταν είναι διαθέσιμη μια νέα έκδοση του OmniType</string>
+    <string name="update_available_title">Διαθέσιμη ενημέρωση OmniType</string>
     <string name="update_available_text">Πατήστε για να δείτε την τελευταία έκδοση</string>
 
     <!-- Command descriptions -->
@@ -144,7 +144,7 @@
     <string name="settings_fetch_models_success">Φορτώθηκαν %1$d μοντέλα</string>
     <string name="settings_fetch_models_empty">Δεν βρέθηκαν μοντέλα. Μπορείτε να εισαγάγετε ένα μοντέλο χειροκίνητα.</string>
     <string name="settings_fetch_models_failed">Δεν ήταν δυνατή η λήψη των μοντέλων. Ελέγξτε τη διεύθυνση και το κλειδί API.</string>
-    <string name="dashboard_service_killed_title">Το SwiftSlate διακόπηκε</string>
+    <string name="dashboard_service_killed_title">Το OmniType διακόπηκε</string>
     <string name="dashboard_service_killed_message">Η υπηρεσία παρασκηνίου σταμάτησε απροσδόκητα. Ενεργοποιήστε την ξανά στις ρυθμίσεις προσβασιμότητας για να συνεχίσετε να χρησιμοποιείτε εντολές.</string>
     <string name="dashboard_service_killed_dismiss">Απόρριψη</string>
 </resources>

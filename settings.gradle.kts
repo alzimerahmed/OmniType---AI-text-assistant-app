@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SwiftSlate"
+rootProject.name = "OmniType"
 include(":app")
 

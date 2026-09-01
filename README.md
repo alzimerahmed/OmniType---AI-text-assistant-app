@@ -2,11 +2,11 @@
 
 <br>
 
-<img src="playstore-icon.png" width="140" alt="SwiftSlate Icon" />
+<img src="playstore-icon.png" width="140" alt="OmniType Icon" />
 
 <br>
 
-# SwiftSlate
+# OmniType
 
 ### System-wide AI text assistant for Android — powered by Gemini, Groq, and any OpenAI-compatible endpoint
 
@@ -19,36 +19,36 @@ Type a trigger like **`?fix`** at the end of any text, in any app, and watch it 
 [![Gemini](https://img.shields.io/badge/Gemini_AI-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)](#-supported-ai-providers)
 [![License: MIT](https://img.shields.io/badge/MIT-blue?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
 
-[![Latest Release](https://img.shields.io/github/v/release/Musheer360/SwiftSlate?style=flat-square&label=Latest&color=brightgreen)](https://github.com/Musheer360/SwiftSlate/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/Musheer360/SwiftSlate/total?style=flat-square&label=Downloads&color=brightgreen)](https://github.com/Musheer360/SwiftSlate/releases)
-[![F-Droid](https://img.shields.io/f-droid/v/com.musheer360.swiftslate?style=flat-square)](https://f-droid.org/en/packages/com.musheer360.swiftslate/)
-[![GitHub Stars](https://img.shields.io/github/stars/Musheer360/SwiftSlate?style=flat-square&color=yellow)](https://github.com/Musheer360/SwiftSlate/stargazers)
+[![Latest Release](https://img.shields.io/github/v/release/alzimerahmed/OmniType?style=flat-square&label=Latest&color=brightgreen)](https://github.com/alzimerahmed/OmniType/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/alzimerahmed/OmniType/total?style=flat-square&label=Downloads&color=brightgreen)](https://github.com/alzimerahmed/OmniType/releases)
+[![F-Droid](https://img.shields.io/f-droid/v/com.alzimerahmed.omnitype?style=flat-square)](https://f-droid.org/en/packages/com.alzimerahmed.omnitype/)
+[![GitHub Stars](https://img.shields.io/github/stars/alzimerahmed/OmniType?style=flat-square&color=yellow)](https://github.com/alzimerahmed/OmniType/stargazers)
 [![APK Size](https://img.shields.io/badge/APK_Size-~1.7_MB-blue?style=flat-square)](#)
-[![Build](https://img.shields.io/github/actions/workflow/status/Musheer360/SwiftSlate/build.yml?branch=master&style=flat-square&label=CI)](https://github.com/Musheer360/SwiftSlate/actions/workflows/build.yml)
+[![Build](https://img.shields.io/github/actions/workflow/status/alzimerahmed/OmniType/build.yml?branch=master&style=flat-square&label=CI)](https://github.com/alzimerahmed/OmniType/actions/workflows/build.yml)
 
 <br>
 
-<a href="https://trendshift.io/repositories/25274?utm_source=repository-badge&utm_medium=badge&utm_campaign=badge-repository-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/25274" alt="Musheer360/SwiftSlate | Trendshift" width="250" height="55"/></a>
-<a href="https://trendshift.io/repositories/25274?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/25274/daily?language=Kotlin" alt="Musheer360/SwiftSlate | Trendshift" width="250" height="55"/></a>
-<a href="https://trendshift.io/repositories/25274?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/25274/weekly?language=Kotlin" alt="Musheer360/SwiftSlate | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/25274?utm_source=repository-badge&utm_medium=badge&utm_campaign=badge-repository-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/25274" alt="alzimerahmed/OmniType | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/25274?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/25274/daily?language=Kotlin" alt="alzimerahmed/OmniType | Trendshift" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/25274?utm_source=trendshift-badge&utm_medium=badge&utm_campaign=badge-trendshift-25274" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/25274/weekly?language=Kotlin" alt="alzimerahmed/OmniType | Trendshift" width="250" height="55"/></a>
 
 <br>
 
-[<img src="https://img.shields.io/badge/⬇_Download_APK-282828?style=for-the-badge" alt="Download APK" height="36">](https://github.com/Musheer360/SwiftSlate/releases/latest)
+[<img src="https://img.shields.io/badge/⬇_Download_APK-282828?style=for-the-badge" alt="Download APK" height="36">](https://github.com/alzimerahmed/OmniType/releases/latest)
 &nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/🐛_Report_Bug-282828?style=for-the-badge" alt="Report Bug" height="36">](https://github.com/Musheer360/SwiftSlate/issues)
+[<img src="https://img.shields.io/badge/🐛_Report_Bug-282828?style=for-the-badge" alt="Report Bug" height="36">](https://github.com/alzimerahmed/OmniType/issues)
 &nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/💡_Request_Feature-282828?style=for-the-badge" alt="Request Feature" height="36">](https://github.com/Musheer360/SwiftSlate/issues)
+[<img src="https://img.shields.io/badge/💡_Request_Feature-282828?style=for-the-badge" alt="Request Feature" height="36">](https://github.com/alzimerahmed/OmniType/issues)
 
 <br>
 
 </div>
 
 > [!NOTE]
-> **SwiftSlate works in most apps** — WhatsApp, Gmail, Twitter/X, Messages, Notes, and more. No copy-pasting. No app switching. Just type and go. Some apps with custom input fields may not be supported ([see limitations](#%EF%B8%8F-known-limitations)).
+> **OmniType works in most apps** — WhatsApp, Gmail, Twitter/X, Messages, Notes, and more. No copy-pasting. No app switching. Just type and go. Some apps with custom input fields may not be supported ([see limitations](#%EF%B8%8F-known-limitations)).
 
 > [!TIP]
-> **Looking for the Windows version?** Check out [**SwiftSlate Desktop**](https://github.com/Musheer360/SwiftSlate-Desktop) — same concept, works system-wide on Windows 10/11.
+> **Looking for the Windows version?** Check out [**OmniType Desktop**](https://github.com/alzimerahmed/OmniType-Desktop) — same concept, works system-wide on Windows 10/11.
 
 <br>
 
@@ -113,13 +113,13 @@ Type a trigger like **`?fix`** at the end of any text, in any app, and watch it 
 Integrates at the system level via Android's Accessibility Service. Works in **most apps** — messaging, email, social media, notes, browsers, and more. Some apps with custom input fields may not be supported ([see limitations](#%EF%B8%8F-known-limitations)).
 
 ### ✂️ Text-Selection Menu
-Select any text, tap **SwiftSlate** in the Copy/Share popup, and pick a command — no accessibility permission required. Works in any app that offers Android's text-selection menu, including apps the accessibility flow can't reach.
+Select any text, tap **OmniType** in the Copy/Share popup, and pick a command — no accessibility permission required. Works in any app that offers Android's text-selection menu, including apps the accessibility flow can't reach.
 
 ### ⚡ Instant Inline Replacement
 Type, trigger, done. The AI response replaces your text directly in the same field — no copy-pasting, no app switching. While processing, an animated spinner appends to your text (e.g., `how r u ◐`) so you always see progress. Text replacer commands execute instantly.
 
 ### 🔑 Multi-Key Rotation
-Add multiple API keys for automatic round-robin rotation. If one key hits a rate limit, SwiftSlate seamlessly switches to the next.
+Add multiple API keys for automatic round-robin rotation. If one key hits a rate limit, OmniType seamlessly switches to the next.
 
 ### 🌙 AMOLED Dark Theme
 Pure black (`#000000`) Material 3 interface designed for OLED screens — saves battery and looks stunning. Light theme also included.
@@ -150,7 +150,7 @@ No telemetry, no tracking, no crash reporting — text is sent only to your conf
 
 ## 🧩 Built-in Commands
 
-SwiftSlate ships with **9 AI-powered commands**, dynamic translation, and **5 built-in local commands** — ready to use out of the box. The AI commands are seeded as editable entries, so you can reword or delete any of them:
+OmniType ships with **9 AI-powered commands**, dynamic translation, and **5 built-in local commands** — ready to use out of the box. The AI commands are seeded as editable entries, so you can reword or delete any of them:
 
 | Trigger | Action | Example |
 |:--------|:-------|:--------|
@@ -187,7 +187,7 @@ Use any standard language code with `?translate:XX`:
 
 ### 📋 Clipboard Commands
 
-SwiftSlate also includes **4 clipboard commands** that work entirely offline, using the real Android system clipboard:
+OmniType also includes **4 clipboard commands** that work entirely offline, using the real Android system clipboard:
 
 | Trigger | Action | Example |
 |:--------|:-------|:--------|
@@ -197,7 +197,7 @@ SwiftSlate also includes **4 clipboard commands** that work entirely offline, us
 | **`?replace`** | Replace all text with clipboard content | Type `?replace` → replaces field content with the clipboard contents |
 
 > [!NOTE]
-> `?paste` and `?replace` work with anything you've copied, in any app. Since Android 10, an accessibility service can't *read* the clipboard (only the focused app and the active keyboard can), so SwiftSlate doesn't try — it asks the text field itself to paste, which the app performs under its own focus. If a field ignores that request, SwiftSlate falls back to the last text you copied with `?copy` or `?cut`.
+> `?paste` and `?replace` work with anything you've copied, in any app. Since Android 10, an accessibility service can't *read* the clipboard (only the focused app and the active keyboard can), so OmniType doesn't try — it asks the text field itself to paste, which the app performs under its own focus. If a field ignores that request, OmniType falls back to the last text you copied with `?copy` or `?cut`.
 
 <br>
 
@@ -246,15 +246,15 @@ Beyond AI, you can create **text replacer commands** that run **entirely offline
 
 **Option 1 — F-Droid:**
 
-[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/en/packages/com.musheer360.swiftslate/)
+[<img src="https://f-droid.org/badge/get-it-on.png" alt="Get it on F-Droid" height="80">](https://f-droid.org/en/packages/com.alzimerahmed.omnitype/)
 
 **Option 2 — GitHub Releases:**
 
-**1.** Download the latest APK from the [**Releases**](https://github.com/Musheer360/SwiftSlate/releases/latest) page
+**1.** Download the latest APK from the [**Releases**](https://github.com/alzimerahmed/OmniType/releases/latest) page
 
 **2.** Install the APK on your device (allow installation from unknown sources if prompted)
 
-**3.** Open SwiftSlate and follow the setup below
+**3.** Open OmniType and follow the setup below
 
 ### Setup in 3 Steps
 
@@ -275,7 +275,7 @@ Open the **Keys** tab, enter your API key. It's validated before saving. Add mul
 
 ♿ **Enable Service**
 
-On the **Dashboard**, tap **"Enable"** → find **"SwiftSlate Assistant"** in Accessibility Settings → toggle it on.
+On the **Dashboard**, tap **"Enable"** → find **"OmniType Assistant"** in Accessibility Settings → toggle it on.
 
 </td>
 <td width="33%" align="center">
@@ -318,7 +318,7 @@ flowchart TD
 
 <br>
 
-1. **Event Listening** — SwiftSlate registers an Accessibility Service that listens for `TYPE_VIEW_TEXT_CHANGED` events across all apps (ignoring its own UI and password fields)
+1. **Event Listening** — OmniType registers an Accessibility Service that listens for `TYPE_VIEW_TEXT_CHANGED` events across all apps (ignoring its own UI and password fields)
 2. **Fast Exit Optimization** — For performance, it first checks if the last character of typed text matches any known trigger's last character before doing a full scan
 3. **Longest Match** — When a potential match is found, it searches for the longest matching trigger at the end of the text
 4. **Command Routing** — Text replacer commands execute immediately on-device. AI commands proceed to the API call path
@@ -326,7 +326,7 @@ flowchart TD
 6. **Inline Spinner** — While waiting for the AI response, the trigger is replaced with an animated spinner appended to your original text (e.g., `how r u ◐`) to show progress
 7. **Watchdog Timer** — A 120-second safety timer auto-cancels stuck processing jobs to prevent the service from becoming unresponsive
 8. **Text Replacement** — The response replaces the original text using `ACTION_SET_TEXT`
-9. **Fallback Strategy** — If `ACTION_SET_TEXT` fails (some apps don't support it), SwiftSlate falls back to a clipboard-based select-all + paste approach
+9. **Fallback Strategy** — If `ACTION_SET_TEXT` fails (some apps don't support it), OmniType falls back to a clipboard-based select-all + paste approach
 10. **Post-Replace Verification** — A delayed check ensures the IME didn't clobber the replacement, re-applying if needed
 11. **Bounded Responses** — API responses are capped at 1 MB to prevent memory issues from malformed responses
 
@@ -336,10 +336,10 @@ flowchart TD
 
 ## ✂️ Text-Selection Menu
 
-Every app that offers Android's text-selection popup (the one with Copy, Cut, Share) can show **SwiftSlate** as an option, whether or not the accessibility service is enabled:
+Every app that offers Android's text-selection popup (the one with Copy, Cut, Share) can show **OmniType** as an option, whether or not the accessibility service is enabled:
 
 1. Select text in any app
-2. Tap **SwiftSlate** in the popup
+2. Tap **OmniType** in the popup
 3. Pick a command
 4. Get the result back with **Insert** (replaces the selection in-place, when the field allows it) or **Copy**
 
@@ -369,18 +369,18 @@ Create, edit, and manage your own commands in the **Commands** tab.
 | `?tldr` | `Summarize this text in one sentence.` | Quick summaries |
 
 > [!TIP]
-> Just describe the transformation you want — SwiftSlate's system instruction automatically ensures the AI returns only the transformed text without extra commentary.
+> Just describe the transformation you want — OmniType's system instruction automatically ensures the AI returns only the transformed text without extra commentary.
 
 <br>
 
 ## 🔑 API Key Management
 
-SwiftSlate supports multiple API keys with intelligent rotation:
+OmniType supports multiple API keys with intelligent rotation:
 
 | Feature | Details |
 |:--------|:--------|
 | **Round-Robin Rotation** | Keys are used in turn to spread usage evenly across all configured keys |
-| **Rate-Limit Handling** | If a key gets rate-limited (HTTP 429), SwiftSlate tracks the cooldown and skips it automatically |
+| **Rate-Limit Handling** | If a key gets rate-limited (HTTP 429), OmniType tracks the cooldown and skips it automatically |
 | **Invalid Key Detection** | Keys returning 401/403 errors are marked invalid and excluded from rotation |
 | **Encrypted Storage** | All keys encrypted with AES-256-GCM via Android Keystore before being saved locally |
 | **Live Validation** | Keys are validated against the provider's API before being saved |
@@ -406,7 +406,7 @@ Find both options in the **Settings** tab under **Backup & Restore**.
 
 ## 🖥️ App Screens
 
-SwiftSlate has **four screens** accessible via the bottom navigation bar:
+OmniType has **four screens** accessible via the bottom navigation bar:
 
 <table>
 <tr>
@@ -491,7 +491,7 @@ SwiftSlate has **four screens** accessible via the bottom navigation bar:
 
 ## 🌍 Localization
 
-SwiftSlate's UI is available in **40 languages**:
+OmniType's UI is available in **40 languages**:
 
 | | | | |
 |:--|:--|:--|:--|
@@ -515,9 +515,9 @@ Adding a translation is a single directory: drop `values-<locale>/strings.xml` i
 ## 🔒 Privacy & Security
 
 > [!NOTE]
-> SwiftSlate is built with privacy as a **core architectural principle**, not an afterthought.
+> OmniType is built with privacy as a **core architectural principle**, not an afterthought.
 
-| | Concern | How SwiftSlate Handles It |
+| | Concern | How OmniType Handles It |
 |:--|:--------|:------------------------|
 | 👁️ | **Text Monitoring** | Only processes text when a trigger command is detected at the end. All other typing is completely ignored. Password fields are always skipped. |
 | 📡 | **Data Transmission** | Text is sent **only** to the configured AI provider (Google Gemini, Groq, or your custom endpoint). No other servers are ever contacted. Text replacer commands never leave your device. |
@@ -546,14 +546,14 @@ Adding a translation is a single directory: drop `values-<locale>/strings.xml` i
 <tr><td><strong>Target SDK</strong></td><td>API 36</td></tr>
 </table>
 
-> **Zero third-party dependencies** for networking or JSON parsing — SwiftSlate uses only Android's built-in APIs.
+> **Zero third-party dependencies** for networking or JSON parsing — OmniType uses only Android's built-in APIs.
 
 <br>
 
 ## 🏛️ Architecture
 
 ```
-com.musheer360.swiftslate/
+com.alzimerahmed.omnitype/
 ├── service/
 │   ├── AssistantService.kt      # Core accessibility service — event listening, trigger
 │   │                            # detection, text replacement, undo, inline spinner
@@ -599,8 +599,8 @@ com.musheer360.swiftslate/
 │   │                            # the app's own bottom sheet and toast)
 │   └── theme/Theme.kt           # AMOLED dark + light Material 3 color schemes
 ├── MainActivity.kt              # AnimatedContent tab navigation (4 tabs)
-├── SwiftSlateViewModel.kt       # Shared ViewModel exposing managers + prefs
-├── SwiftSlateApp.kt             # Application class — SharedPreferences pre-warming,
+├── OmniTypeViewModel.kt       # Shared ViewModel exposing managers + prefs
+├── OmniTypeApp.kt             # Application class — SharedPreferences pre-warming,
 │                                # WorkManager update check scheduling
 └── worker/
     └── UpdateCheckWorker.kt     # Daily background check for new GitHub releases
@@ -620,8 +620,8 @@ com.musheer360.swiftslate/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Musheer360/SwiftSlate.git
-cd SwiftSlate
+git clone https://github.com/alzimerahmed/OmniType.git
+cd OmniType
 
 # Build debug APK
 ./gradlew assembleDebug
@@ -657,11 +657,11 @@ export KEY_PASSWORD=your_key_password
 
 Every pull request builds a **preview APK** you can install side by side with a stable release.
 
-It ships as a separate app — applicationId `com.musheer360.swiftslate.preview`, shown on your launcher as **SwiftSlate Preview** — so installing it never replaces your stable build and never touches its API keys, commands, stats or accessibility setting. Both appear as separate entries under Settings → Accessibility, and you can enable whichever you want to test.
+It ships as a separate app — applicationId `com.alzimerahmed.omnitype.preview`, shown on your launcher as **OmniType Preview** — so installing it never replaces your stable build and never touches its API keys, commands, stats or accessibility setting. Both appear as separate entries under Settings → Accessibility, and you can enable whichever you want to test.
 
 1. Open the pull request's **Checks** tab and pick the latest **Build & Release** run
-2. Download the `SwiftSlate-preview-prNNN` artifact from the **Artifacts** section
-3. Unzip and install the APK, then enable **SwiftSlate Preview** in accessibility settings
+2. Download the `OmniType-preview-prNNN` artifact from the **Artifacts** section
+3. Unzip and install the APK, then enable **OmniType Preview** in accessibility settings
 4. Uninstall it when you're done — your stable install is untouched throughout
 
 Preview builds are shrunk and non-debuggable like release builds, but signed with a debug key, so they'll never silently update your stable app. To build one locally:
@@ -675,11 +675,11 @@ Preview builds are shrunk and non-debuggable like release builds, but signed wit
 
 ## ⚠️ Known Limitations
 
-- **Some apps use custom input fields** that don't support Android's standard text replacement APIs. SwiftSlate includes a clipboard-based fallback and a focused-node fallback, but note-taking apps built on WebView or custom editors (Google Keep, Samsung Notes, some Zoho fields) can still ignore replacements — text replacement works most reliably in apps with standard text fields (WhatsApp, Telegram, Gmail, etc.). The [text-selection menu](#%EF%B8%8F-text-selection-menu) works in all of them, since it doesn't rely on the accessibility service.
-- **WeChat deliberately degrades third-party accessibility services.** Since WeChat 8.0.52+, non-whitelisted services (everything except system apps) receive wiped or faked node trees and incomplete text-change events — this is enforced by WeChat itself and cannot be fixed from any accessibility app. SwiftSlate cannot reliably detect triggers inside WeChat chat input; use the [text-selection menu](#%EF%B8%8F-text-selection-menu) there instead.
-- **Some OEMs restrict accessibility services.** Certain manufacturers (e.g., OnePlus, Xiaomi) may hide or block third-party accessibility services in their settings UI. If SwiftSlate doesn't appear in your accessibility settings, check for a "Downloaded apps" or "Installed services" section, or try searching for it. On Android 13+, sideloaded apps must also be allowed via **App info → ⋮ → Allow restricted settings** before the accessibility toggle unlocks.
-- **Aggressive battery optimization can silently disable the service.** Some OEM skins (Xiaomi/MIUI, OnePlus/OxygenOS, Infinix/XOS, Samsung One UI, and others) kill background accessibility services after a period of inactivity to save battery, and Android itself does not let an accessibility service run as a foreground/persistent service to defend against this. If SwiftSlate stops responding and shows as inactive on the Dashboard after running for a while, this is the most common cause — re-enable it in Accessibility Settings and, per OEM: **Xiaomi/HyperOS** — enable *Autostart*, set Battery saver to *No restrictions*, lock SwiftSlate in Recents, and avoid Ultra Battery Saver (its force-stop also strips the permission, which flips the toggle itself OFF); **Infinix/XOS and OnePlus/OxygenOS** — set battery to *No restrictions* / *Don't optimize* and lock the app in Recents; **Samsung One UI** — set battery to *Unrestricted*, disable *Remove permissions if app is unused*, and remove the app from Sleeping/Deep-sleeping lists. If the service actually crashed, the Dashboard now shows a "SwiftSlate was interrupted" banner with a one-tap re-enable.
-- **Some banking apps refuse to open while any accessibility service is enabled**, including SwiftSlate. This is a security measure the bank's app controls entirely — it checks the OS's list of enabled accessibility services and blocks itself if that list isn't empty, regardless of which app is on it or what that app actually does. There's no manifest flag or API that lets a legitimate accessibility tool opt out of another app's own check, so this can't be fixed on SwiftSlate's end. Disable SwiftSlate's accessibility permission before opening the affected banking app, then re-enable it afterward. The [text-selection menu](#%EF%B8%8F-text-selection-menu) still works with accessibility disabled, since it doesn't use the service at all.
+- **Some apps use custom input fields** that don't support Android's standard text replacement APIs. OmniType includes a clipboard-based fallback and a focused-node fallback, but note-taking apps built on WebView or custom editors (Google Keep, Samsung Notes, some Zoho fields) can still ignore replacements — text replacement works most reliably in apps with standard text fields (WhatsApp, Telegram, Gmail, etc.). The [text-selection menu](#%EF%B8%8F-text-selection-menu) works in all of them, since it doesn't rely on the accessibility service.
+- **WeChat deliberately degrades third-party accessibility services.** Since WeChat 8.0.52+, non-whitelisted services (everything except system apps) receive wiped or faked node trees and incomplete text-change events — this is enforced by WeChat itself and cannot be fixed from any accessibility app. OmniType cannot reliably detect triggers inside WeChat chat input; use the [text-selection menu](#%EF%B8%8F-text-selection-menu) there instead.
+- **Some OEMs restrict accessibility services.** Certain manufacturers (e.g., OnePlus, Xiaomi) may hide or block third-party accessibility services in their settings UI. If OmniType doesn't appear in your accessibility settings, check for a "Downloaded apps" or "Installed services" section, or try searching for it. On Android 13+, sideloaded apps must also be allowed via **App info → ⋮ → Allow restricted settings** before the accessibility toggle unlocks.
+- **Aggressive battery optimization can silently disable the service.** Some OEM skins (Xiaomi/MIUI, OnePlus/OxygenOS, Infinix/XOS, Samsung One UI, and others) kill background accessibility services after a period of inactivity to save battery, and Android itself does not let an accessibility service run as a foreground/persistent service to defend against this. If OmniType stops responding and shows as inactive on the Dashboard after running for a while, this is the most common cause — re-enable it in Accessibility Settings and, per OEM: **Xiaomi/HyperOS** — enable *Autostart*, set Battery saver to *No restrictions*, lock OmniType in Recents, and avoid Ultra Battery Saver (its force-stop also strips the permission, which flips the toggle itself OFF); **Infinix/XOS and OnePlus/OxygenOS** — set battery to *No restrictions* / *Don't optimize* and lock the app in Recents; **Samsung One UI** — set battery to *Unrestricted*, disable *Remove permissions if app is unused*, and remove the app from Sleeping/Deep-sleeping lists. If the service actually crashed, the Dashboard now shows a "OmniType was interrupted" banner with a one-tap re-enable.
+- **Some banking apps refuse to open while any accessibility service is enabled**, including OmniType. This is a security measure the bank's app controls entirely — it checks the OS's list of enabled accessibility services and blocks itself if that list isn't empty, regardless of which app is on it or what that app actually does. There's no manifest flag or API that lets a legitimate accessibility tool opt out of another app's own check, so this can't be fixed on OmniType's end. Disable OmniType's accessibility permission before opening the affected banking app, then re-enable it afterward. The [text-selection menu](#%EF%B8%8F-text-selection-menu) still works with accessibility disabled, since it doesn't use the service at all.
 
 <br>
 
@@ -689,8 +689,8 @@ Contributions are welcome! Here's how to get involved:
 
 ```bash
 # 1. Fork the repository, then:
-git clone https://github.com/YOUR_USERNAME/SwiftSlate.git
-cd SwiftSlate
+git clone https://github.com/YOUR_USERNAME/OmniType.git
+cd OmniType
 
 # 2. Create a feature branch
 git checkout -b feature/amazing-feature
@@ -714,7 +714,7 @@ git push origin feature/amazing-feature
 
 ## 💜 Sponsors
 
-SwiftSlate is made possible by the generous support of its sponsors. Thank you!
+OmniType is made possible by the generous support of its sponsors. Thank you!
 
 <table>
 <tr>
@@ -727,16 +727,16 @@ SwiftSlate is made possible by the generous support of its sponsors. Thank you!
 </tr>
 </table>
 
-Want to see your name here? [**Become a sponsor →**](https://github.com/sponsors/Musheer360)
+Want to see your name here? [**Become a sponsor →**](https://github.com/sponsors/alzimerahmed)
 
 <br>
 
 ## ❤️ Support the Project
 
-SwiftSlate is free, open source, and built in my spare time. If it's useful to you, consider supporting its development:
+OmniType is free, open source, and built in my spare time. If it's useful to you, consider supporting its development:
 
-- ⭐ **Star this repo** — it helps others discover SwiftSlate
-- 💖 [**Sponsor on GitHub**](https://github.com/sponsors/Musheer360) — even a small contribution keeps the project going
+- ⭐ **Star this repo** — it helps others discover OmniType
+- 💖 [**Sponsor on GitHub**](https://github.com/sponsors/alzimerahmed) — even a small contribution keeps the project going
 
 <br>
 
@@ -750,11 +750,11 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <div align="center">
 
-<a href="https://star-history.dera.page/#Musheer360/SwiftSlate&Date">
+<a href="https://star-history.dera.page/#alzimerahmed/OmniType&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=Musheer360/SwiftSlate&type=Date&theme=dark" />
-    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=Musheer360/SwiftSlate&type=Date" />
-    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=Musheer360/SwiftSlate&type=Date" width="600" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://star-history.dera.page/svg?repos=alzimerahmed/OmniType&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://star-history.dera.page/svg?repos=alzimerahmed/OmniType&type=Date" />
+    <img alt="Star History Chart" src="https://star-history.dera.page/svg?repos=alzimerahmed/OmniType&type=Date" width="600" />
   </picture>
 </a>
 
@@ -768,9 +768,9 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 <br>
 
-Made with ❤️ by [**Musheer Alam**](https://github.com/Musheer360)
+Made with ❤️ by [**Alzimer Ahmed**](https://github.com/alzimerahmed)
 
-If SwiftSlate makes your typing life easier, consider giving it a ⭐
+If OmniType makes your typing life easier, consider giving it a ⭐
 
 <br>
 

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">SwiftSlate</string>
-    <string name="accessibility_service_label">SwiftSlate सहायक</string>
+    <string name="app_name">OmniType</string>
+    <string name="accessibility_service_label">OmniType सहायक</string>
     <string name="accessibility_service_desc">ट्रिगर कमांड टाइप करने पर सिस्टम-व्यापी AI टेक्स्ट प्रतिस्थापन प्रदान करता है।</string>
 
     <!-- Dashboard -->
@@ -88,7 +88,7 @@
     <string name="dashboard_no_data">—</string>
     <string name="dashboard_last_7_days">पिछले 7 दिन</string>
     <string name="settings_temperature_title">तापमान</string>
-    <string name="settings_made_by">Musheer Alam द्वारा प्यार से बनाया गया</string>
+    <string name="settings_made_by">Alzimer Ahmed द्वारा प्यार से बनाया गया</string>
     <string name="settings_sponsor">GitHub पर प्रायोजित करें</string>
 
     <!-- Toasts and errors -->
@@ -105,7 +105,7 @@
     <string name="process_text_retry">पुनः प्रयास करें</string>
     <string name="process_text_copied">कॉपी किया गया</string>
     <string name="process_text_no_selection">कोई टेक्स्ट चयनित नहीं है</string>
-    <string name="process_text_no_commands">कोई कमांड उपलब्ध नहीं है। SwiftSlate में एक कमांड जोड़ें।</string>
+    <string name="process_text_no_commands">कोई कमांड उपलब्ध नहीं है। OmniType में एक कमांड जोड़ें।</string>
     <string name="toast_restore_failed">मूल टेक्स्ट पुनर्स्थापित नहीं किया जा सका</string>
     <string name="toast_nothing_to_undo">पूर्ववत करने के लिए कुछ नहीं है</string>
     <string name="toast_undo_failed">पूर्ववत नहीं किया जा सका</string>
@@ -129,8 +129,8 @@
 
     <!-- Updates and command descriptions -->
     <string name="update_channel_name">ऐप अपडेट</string>
-    <string name="update_channel_desc">SwiftSlate का नया संस्करण उपलब्ध होने पर सूचित करता है</string>
-    <string name="update_available_title">SwiftSlate अपडेट उपलब्ध है</string>
+    <string name="update_channel_desc">OmniType का नया संस्करण उपलब्ध होने पर सूचित करता है</string>
+    <string name="update_available_title">OmniType अपडेट उपलब्ध है</string>
     <string name="update_available_text">नवीनतम रिलीज़ देखने के लिए टैप करें</string>
     <string name="error_input_too_long">यह टेक्स्ट इस मॉडल की हर मिनट की टोकन सीमा के लिए बहुत लंबा है. छोटे टेक्स्ट के साथ दोबारा कोशिश करें.</string>
     <string name="note_response_truncated">[नोट: जवाब अधूरा हो सकता है]</string>
@@ -141,7 +141,7 @@
     <string name="settings_fetch_models_success">%1$d मॉडल लोड हुए</string>
     <string name="settings_fetch_models_empty">कोई मॉडल नहीं मिला। आप फिर भी मैन्युअल रूप से मॉडल दर्ज कर सकते हैं।</string>
     <string name="settings_fetch_models_failed">मॉडल नहीं लाए जा सके। एंडपॉइंट और API कुंजी जाँचें।</string>
-    <string name="dashboard_service_killed_title">SwiftSlate बाधित हो गया</string>
+    <string name="dashboard_service_killed_title">OmniType बाधित हो गया</string>
     <string name="dashboard_service_killed_message">बैकग्राउंड सेवा अप्रत्याशित रूप से बंद हो गई। कमांड का उपयोग जारी रखने के लिए इसे सुलभता सेटिंग में फिर से सक्षम करें।</string>
     <string name="dashboard_service_killed_dismiss">खारिज करें</string>
 </resources>

@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">SwiftSlate</string>
-    <string name="accessibility_service_label">SwiftSlate Assistent</string>
+    <string name="app_name">OmniType</string>
+    <string name="accessibility_service_label">OmniType Assistent</string>
     <string name="accessibility_service_desc">Bietet systemweite KI-Textersetzungen, wenn Auslösebefehle eingegeben werden.</string>
 
     <!-- Dashboard -->
@@ -88,7 +88,7 @@
     <string name="dashboard_no_data">—</string>
     <string name="dashboard_last_7_days">Letzte 7 Tage</string>
     <string name="settings_temperature_title">Temperatur</string>
-    <string name="settings_made_by">Mit Liebe gemacht von Musheer Alam</string>
+    <string name="settings_made_by">Mit Liebe gemacht von Alzimer Ahmed</string>
     <string name="settings_sponsor">Auf GitHub sponsern</string>
 
     <!-- Toasts and errors -->
@@ -105,7 +105,7 @@
     <string name="process_text_retry">Erneut versuchen</string>
     <string name="process_text_copied">Kopiert</string>
     <string name="process_text_no_selection">Kein Text ausgewählt</string>
-    <string name="process_text_no_commands">Keine Befehle verfügbar. Füge einen in SwiftSlate hinzu.</string>
+    <string name="process_text_no_commands">Keine Befehle verfügbar. Füge einen in OmniType hinzu.</string>
     <string name="toast_restore_failed">Ursprünglicher Text konnte nicht wiederhergestellt werden</string>
     <string name="toast_nothing_to_undo">Nichts zum Rückgängigmachen</string>
     <string name="toast_undo_failed">Rückgängigmachen fehlgeschlagen</string>
@@ -129,8 +129,8 @@
 
     <!-- Updates -->
     <string name="update_channel_name">App-Updates</string>
-    <string name="update_channel_desc">Benachrichtigt, wenn eine neue Version von SwiftSlate verfügbar ist</string>
-    <string name="update_available_title">SwiftSlate-Update verfügbar</string>
+    <string name="update_channel_desc">Benachrichtigt, wenn eine neue Version von OmniType verfügbar ist</string>
+    <string name="update_available_title">OmniType-Update verfügbar</string>
     <string name="update_available_text">Tippe, um die neueste Version anzuzeigen</string>
 
     <!-- Command descriptions -->
@@ -143,7 +143,7 @@
     <string name="settings_fetch_models_success">%1$d Modelle geladen</string>
     <string name="settings_fetch_models_empty">Keine Modelle gefunden. Du kannst ein Modell trotzdem manuell eingeben.</string>
     <string name="settings_fetch_models_failed">Modelle konnten nicht abgerufen werden. Prüfe die Adresse und den API-Schlüssel.</string>
-    <string name="dashboard_service_killed_title">SwiftSlate wurde unterbrochen</string>
+    <string name="dashboard_service_killed_title">OmniType wurde unterbrochen</string>
     <string name="dashboard_service_killed_message">Der Hintergrunddienst wurde unerwartet beendet. Aktiviere ihn in den Bedienungshilfen erneut, um Befehle weiter zu verwenden.</string>
     <string name="dashboard_service_killed_dismiss">Schließen</string>
 </resources>

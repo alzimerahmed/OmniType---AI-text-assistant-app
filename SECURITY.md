@@ -2,11 +2,11 @@
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in SwiftSlate, please report it privately:
+If you discover a security vulnerability in OmniType, please report it privately:
 
-**Email:** me@musheer360.com
+**Email:** alzimerahmed84@gmail.com
 
-**Subject line:** `[SwiftSlate Security] Brief description`
+**Subject line:** `[OmniType Security] Brief description`
 
 Please include:
 - Description of the vulnerability
