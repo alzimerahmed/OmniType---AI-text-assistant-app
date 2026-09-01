@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.SharedPreferences
 import androidx.lifecycle.AndroidViewModel
 import com.alzimerahmed.omnitype.manager.CommandManager
+import com.alzimerahmed.omnitype.manager.HistoryManager
 import com.alzimerahmed.omnitype.manager.StatsManager
 
 class OmniTypeViewModel(application: Application) : AndroidViewModel(application) {
@@ -12,4 +13,5 @@ class OmniTypeViewModel(application: Application) : AndroidViewModel(application
     val keyManager = (application as OmniTypeApp).keyManager
     val commandManager = CommandManager(application)
     val statsManager = StatsManager(application)
+    val historyManager = HistoryManager(application)
 }

@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -32,6 +33,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.alzimerahmed.omnitype.ui.CommandsScreen
 import com.alzimerahmed.omnitype.ui.DashboardScreen
+import com.alzimerahmed.omnitype.ui.HistoryScreen
 import com.alzimerahmed.omnitype.ui.KeysScreen
 import com.alzimerahmed.omnitype.ui.SettingsScreen
 import com.alzimerahmed.omnitype.ui.theme.OmniTypeTheme
@@ -40,6 +42,7 @@ enum class Tab(@param:StringRes val titleRes: Int, val icon: ImageVector) {
     Dashboard(R.string.dashboard_title, Icons.Default.Home),
     Keys(R.string.keys_title, Icons.Default.Lock),
     Commands(R.string.commands_title, Icons.AutoMirrored.Filled.List),
+    History(R.string.history_title, Icons.Default.History),
     Settings(R.string.settings_title, Icons.Default.Settings)
 }
 
@@ -124,6 +127,7 @@ fun OmniTypeMainScreen(vm: OmniTypeViewModel = viewModel()) {
                         Tab.Dashboard -> DashboardScreen(vm.keyManager, vm.commandManager, vm.statsManager)
                         Tab.Keys -> KeysScreen(vm.keyManager, vm.prefs)
                         Tab.Commands -> CommandsScreen(vm.commandManager)
+                        Tab.History -> HistoryScreen(vm.historyManager)
                         Tab.Settings -> SettingsScreen(vm.commandManager, vm.prefs, vm.keyManager)
                     }
                 }

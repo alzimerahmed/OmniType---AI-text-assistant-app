@@ -3,6 +3,14 @@
     <string name="accessibility_service_label">OmniType Assistant</string>
     <string name="accessibility_service_desc">Provides system-wide AI text replacements when trigger commands are typed.</string>
 
+    <!-- History -->
+    <string name="history_title">History</string>
+    <string name="history_empty">No replacements yet. Run a command like ?fix in any app and it will show up here.</string>
+    <string name="history_copy">Copy result</string>
+    <string name="history_clear">Clear all</string>
+    <string name="history_clear_title">Clear history?</string>
+    <string name="history_clear_message">This permanently removes all saved replacements from this device.</string>
+
     <!-- Dashboard -->
     <string name="dashboard_title">Dashboard</string>
     <string name="service_status_active">Active</string>

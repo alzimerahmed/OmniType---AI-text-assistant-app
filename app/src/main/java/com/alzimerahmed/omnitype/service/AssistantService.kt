@@ -19,6 +19,7 @@ import android.view.accessibility.AccessibilityNodeInfo
 import com.alzimerahmed.omnitype.api.GeminiClient
 import com.alzimerahmed.omnitype.api.OpenAICompatibleClient
 import com.alzimerahmed.omnitype.manager.CommandManager
+import com.alzimerahmed.omnitype.manager.HistoryManager
 import com.alzimerahmed.omnitype.manager.KeyManager
 import com.alzimerahmed.omnitype.manager.StatsManager
 import com.alzimerahmed.omnitype.model.Command
@@ -50,6 +51,7 @@ class AssistantService : AccessibilityService() {
     private lateinit var keyManager: KeyManager
     private lateinit var commandManager: CommandManager
     private lateinit var statsManager: StatsManager
+    private lateinit var historyManager: HistoryManager
     private val client = GeminiClient()
     private val openAIClient = OpenAICompatibleClient()
     private val serviceJob = SupervisorJob()
@@ -122,6 +124,7 @@ class AssistantService : AccessibilityService() {
             keyManager = (applicationContext as OmniTypeApp).keyManager
             commandManager = CommandManager(applicationContext)
             statsManager = StatsManager(applicationContext)
+            historyManager = HistoryManager(applicationContext)
             updateTriggers()
         } catch (e: Exception) {
             // This callback runs on the binder thread with no framework guard: an exception
@@ -307,6 +310,9 @@ class AssistantService : AccessibilityService() {
                                 lastUndoSourceId = sourceId(source)
                                 performHapticFeedback(HapticFeedbackConstants.CONFIRM)
                                 statsManager.recordUsage(command.trigger)
+                                if (::historyManager.isInitialized) {
+                                    historyManager.record(command.trigger, precedingText, precedingText + command.prompt)
+                                }
                             }
                         }
                     } catch (e: CancellationException) {
@@ -512,6 +518,7 @@ class AssistantService : AccessibilityService() {
                             lastUndoSourceId = sourceId(source)
                             performHapticFeedback(HapticFeedbackConstants.CONFIRM)
                             statsManager.recordUsage(command.trigger)
+                            historyManager.record(command.trigger, originalText, outcome.text)
                         }
                     }
                     is CommandOutcome.Refusal -> {
