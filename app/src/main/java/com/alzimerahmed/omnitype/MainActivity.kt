@@ -16,7 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.History
+import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.*
@@ -42,7 +42,7 @@ enum class Tab(@param:StringRes val titleRes: Int, val icon: ImageVector) {
     Dashboard(R.string.dashboard_title, Icons.Default.Home),
     Keys(R.string.keys_title, Icons.Default.Lock),
     Commands(R.string.commands_title, Icons.AutoMirrored.Filled.List),
-    History(R.string.history_title, Icons.Default.History),
+    History(R.string.history_title, Icons.Default.Refresh),
     Settings(R.string.settings_title, Icons.Default.Settings)
 }
 
