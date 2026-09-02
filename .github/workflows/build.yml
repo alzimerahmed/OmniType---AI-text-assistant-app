@@ -249,6 +249,29 @@ jobs:
         env:
           KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
 
+      - name: Align key password with keystore format
+        shell: bash
+        env:
+          KEYSTORE_FILE: ${{ github.workspace }}/release.keystore
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          # JKS magic bytes: FE ED FE ED. Other formats (e.g. PKCS12) use the store
+          # password for the private key, so fall back to that for compatibility.
+          magic=$(od -An -tx1 -N4 -v "$KEYSTORE_FILE" | tr -d ' \n')
+          if [ "$magic" = "feedfeed" ]; then
+            echo "Detected JKS keystore; using KEY_PASSWORD as-is"
+            {
+              echo "KEY_PASSWORD=$KEY_PASSWORD"
+            } >> "$GITHUB_ENV"
+          else
+            echo "::warning::Detected non-JKS keystore (magic $magic); using KEYSTORE_PASSWORD as KEY_PASSWORD"
+            {
+              echo "KEY_PASSWORD=$KEYSTORE_PASSWORD"
+            } >> "$GITHUB_ENV"
+          fi
+
       - name: Build Release APK
         shell: bash
         run: |
@@ -269,7 +292,6 @@ jobs:
           KEYSTORE_FILE: ${{ github.workspace }}/release.keystore
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
-          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
 
       - name: Cleanup keystore
         if: always()
