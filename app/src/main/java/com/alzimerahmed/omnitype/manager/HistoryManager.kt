@@ -34,12 +34,17 @@ class HistoryManager(context: Context) {
     fun record(trigger: String, original: String, result: String) {
         if (result.isBlank()) return
         val arr = readArray()
+        // IDs double as Compose LazyColumn keys, so a same-millisecond record (the isProcessing
+        // gate makes it rare, not impossible) must never collide with the newest stored entry.
+        val now = System.currentTimeMillis()
+        val newestId = arr.optJSONObject(0)?.optLong("id", 0L) ?: 0L
+        val id = if (newestId >= now) newestId + 1 else now
         val obj = JSONObject()
-        obj.put("id", System.currentTimeMillis())
+        obj.put("id", id)
         obj.put("trigger", trigger)
         obj.put("original", original.take(MAX_ORIGINAL_LENGTH))
         obj.put("result", result.take(MAX_RESULT_LENGTH))
-        obj.put("timestamp", System.currentTimeMillis())
+        obj.put("timestamp", now)
         val newArr = JSONArray()
         newArr.put(obj)
         for (i in 0 until arr.length()) {

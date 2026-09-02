@@ -518,7 +518,9 @@ class AssistantService : AccessibilityService() {
                             lastUndoSourceId = sourceId(source)
                             performHapticFeedback(HapticFeedbackConstants.CONFIRM)
                             statsManager.recordUsage(command.trigger)
-                            historyManager.record(command.trigger, originalText, outcome.text)
+                            if (::historyManager.isInitialized) {
+                                historyManager.record(command.trigger, originalText, outcome.text)
+                            }
                         }
                     }
                     is CommandOutcome.Refusal -> {

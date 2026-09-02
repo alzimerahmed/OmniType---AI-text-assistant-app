@@ -23,6 +23,9 @@ clipboard commands (`?undo ?copy ?cut ?paste ?replace`, `?translate:<lang>`).
   (local, max 50 entries, SharedPreferences JSON), recorded successful AI and text-replacer
   replacements in `AssistantService`, new History tab (`HistoryScreen.kt`) with copy-result and
   clear-all, `HistoryManagerTest` (Robolectric).
+- **Sep 2026 — Code review fixes**: added the missing `::historyManager.isInitialized` guard on
+  the AI path in `AssistantService`, and made history entry IDs collision-safe (same-millisecond
+  records get `newestId + 1`) so Compose LazyColumn keys stay unique; regression test added.
 
 ## Known architecture constraints (do not break)
 - The accessibility service shares the process with the UI: **no manager may throw on a

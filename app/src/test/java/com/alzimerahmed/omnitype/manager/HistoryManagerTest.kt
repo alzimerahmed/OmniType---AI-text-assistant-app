@@ -50,6 +50,15 @@ class HistoryManagerTest {
     }
 
     @Test
+    fun `same-millisecond records get unique ids`() {
+        historyManager.record("?fix", "a", "one")
+        historyManager.record("?fix", "b", "two")
+        val entries = historyManager.getEntries()
+        org.junit.Assert.assertEquals(2, entries.size)
+        org.junit.Assert.assertNotEquals(entries[0].id, entries[1].id)
+    }
+
+    @Test
     fun `blank results are never recorded`() {
         historyManager.record("?fix", "helo", "   ")
         org.junit.Assert.assertTrue(historyManager.getEntries().isEmpty())
