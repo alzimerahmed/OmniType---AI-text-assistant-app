@@ -81,7 +81,7 @@ jobs:
             TAG="$GIT_REF_NAME"
             CREATE_TAG=false
           else
-            PATCH=$(git tag -l "v${BASE_VERSION}.*" | grep -v beta | sed "s/v${BASE_VERSION}\.//" | sort -n | tail -1)
+            PATCH=$(git tag -l "v${BASE_VERSION}.*" | sed '/beta/d' | sed "s/v${BASE_VERSION}\.//" | sort -n | tail -1)
             NEXT=$((${PATCH:--1} + 1))
             TAG="v${BASE_VERSION}.${NEXT}"
             CREATE_TAG=true
@@ -104,7 +104,7 @@ jobs:
               if [[ "$HTTP_CODE" == "404" ]] && git merge-base --is-ancestor "$PATCH_TAG" HEAD; then
                 echo "::notice::Tag $PATCH_TAG has no release and is part of this branch — removing the orphan and reusing the version."
                 git push origin --delete "refs/tags/$PATCH_TAG"
-                PATCH=$(git tag -l "v${BASE_VERSION}.*" | grep -v beta | sed "s/v${BASE_VERSION}\.//" | sort -n | tail -1)
+                PATCH=$(git tag -l "v${BASE_VERSION}.*" | sed '/beta/d' | sed "s/v${BASE_VERSION}\.//" | sort -n | tail -1)
                 NEXT=$((${PATCH:--1} + 1))
                 TAG="v${BASE_VERSION}.${NEXT}"
               fi
@@ -348,8 +348,9 @@ jobs:
         env:
           TAG: ${{ needs.version.outputs.tag }}
         run: |
-          # Find previous tag
-          PREV_TAG=$(git tag -l 'v*' --sort=-version:refname | grep -v "^${TAG}$" | head -1)
+          # Find previous tag (awk, not `grep -v`: with pipefail a grep on empty input —
+          # a repo with no prior tags — exits 1 and kills the step)
+          PREV_TAG=$(git tag -l 'v*' --sort=-version:refname | awk -v t="${TAG}" '$0 != t' | head -1)
           if [ -z "$PREV_TAG" ]; then
             RANGE="HEAD"
           else
@@ -358,7 +359,7 @@ jobs:
           # Generate changelog from commit messages, skip merge commits and CI noise
           CHANGELOG=$(git log "$RANGE" --pretty=format:"- %s" --no-merges \
             | grep -iv "^- \(ci:\|merge\|changelog\|bump\|docs(fastlane)\)" \
-            | head -20)
+            | head -20 || true)
           if [ -z "$CHANGELOG" ]; then
             CHANGELOG="- Maintenance and bug fixes"
           fi
