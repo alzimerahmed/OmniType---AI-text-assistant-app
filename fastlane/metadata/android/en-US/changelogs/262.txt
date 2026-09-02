@@ -1,0 +1,9 @@
+- Auto-detect keystore format and align key password for CI signing
+- Set release signing keystore type to JKS
+- Fix lint MissingTranslation and unit test counts
+- Fix History tab icon: Icons.Default.History is not in material-icons-core
+- Fix CI: grep on empty tag list fails under pipefail in fresh repo
+- Add email, continue, eli5, positive default commands (seed v3)
+- Simplify README, credit original SwiftSlate project
+- Ignore local AI-assistant workspace artifacts
+- Fix h
