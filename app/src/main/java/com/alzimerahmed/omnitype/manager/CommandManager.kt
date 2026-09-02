@@ -35,12 +35,21 @@ class CommandManager(context: Context) {
     // Typed prefs reads can throw ClassCastException on a corrupted store; this runs on the
     // accessibility service's bind path, where an escape would kill the whole process (#125).
     private var aiCommandsSeeded =
-        try { prefs.getBoolean("ai_commands_seeded", false) } catch (_: Exception) { false }
+        try { prefs.getBoolean(SEED_FLAG, false) } catch (_: Exception) { false }
 
     companion object {
         const val DEFAULT_PREFIX = "?"
         const val PREF_TRIGGER_PREFIX = "trigger_prefix"
         private const val CACHE_TTL_MS = 5_000L
+
+        /**
+         * Bump to ship new default AI commands to existing installs: the seed runs once per
+         * version and skips any trigger the user already has, so their own edits survive.
+         * A default the user explicitly deleted comes back on a version bump — acceptable,
+         * one-time, and they can delete it again.
+         */
+        private const val SEED_VERSION = 3
+        private const val SEED_FLAG = "ai_commands_seeded_v$SEED_VERSION"
 
         /** Limits enforced on every write path — see [isValidCommand] / [importCommands]. */
         const val MAX_TRIGGER_LENGTH = 50
@@ -77,7 +86,17 @@ class CommandManager(context: Context) {
         "casual" to "Rewrite in a casual, friendly tone.",
         "emoji" to "Add relevant emojis throughout.",
         "human" to "Rewrite to sound naturally human, not AI-generated. Never use emdashes or semicolons, use commas or periods instead. Drop AI clichés and filler phrases. Use contractions, everyday words, and varied sentence lengths. Keep all facts, names, and numbers intact.",
-        "reply" to "Generate a contextual reply to this message."
+        "reply" to "Generate a contextual reply to this message.",
+        "rephrase" to "Rewrite this saying the same thing in different words.",
+        "simplify" to "Rewrite in simple, plain language that anyone can easily understand.",
+        "bullet" to "Convert this text into clear, concise bullet points.",
+        "tldr" to "Summarize this text in one or two short sentences.",
+        "polite" to "Rewrite to sound more polite and considerate without changing the meaning.",
+        "explain" to "Explain what this text means in simple terms.",
+        "email" to "Rewrite this as a clear, well-structured email with an appropriate greeting and sign-off.",
+        "continue" to "Continue writing this text, matching its tone, style, and topic. Do not repeat what is already written.",
+        "eli5" to "Explain this like I'm five years old, using the simplest possible words and a friendly tone.",
+        "positive" to "Rewrite to sound positive and upbeat while keeping the core message intact."
     )
 
     /** Drops the cache and its validity key so the next [getCommands] rebuilds from prefs. */
@@ -157,7 +176,7 @@ class CommandManager(context: Context) {
             editor.putString("custom_commands", arr.toString())
             invalidateCache()
         }
-        editor.putBoolean("ai_commands_seeded", true).apply()
+        editor.putBoolean(SEED_FLAG, true).apply()
         aiCommandsSeeded = true
     }
 

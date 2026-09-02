@@ -24,6 +24,8 @@ OmniType runs as an accessibility service. When it sees a trigger command at the
 | `?undo` | Restore your original text |
 | `?copy` `?cut` `?paste` `?replace` | Clipboard helpers (offline) |
 
+Also built in: `?rephrase`, `?simplify`, `?bullet`, `?tldr`, `?polite`, `?explain`, `?email`, `?continue`, `?eli5`, `?positive`, `?emoji`, `?human`.
+
 You can also create your own AI commands with custom prompts, and offline **text replacer** shortcuts (e.g. `?sig` for your signature) that need no API key.
 
 ## Providers

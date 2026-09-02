@@ -28,6 +28,22 @@ class CommandManagerTest {
     // --- findCommand ---
 
     @Test
+    fun `seed v3 ships the new day-to-day default commands`() {
+        val triggers = commandManager.getCommands().map { it.trigger }
+        for (name in listOf("email", "continue", "eli5", "positive", "rephrase", "simplify", "bullet", "tldr", "polite", "explain")) {
+            assertTrue("missing default command ?$name", triggers.contains("?$name"))
+        }
+    }
+
+    @Test
+    fun `seed skips triggers the user already has`() {
+        // Simulate an existing install that already defined its own ?email
+        commandManager.saveCustomCommand(Command("?email", "My custom email prompt", false, CommandType.AI))
+        val before = commandManager.getCommands().first { it.trigger == "?email" }
+        assertEquals("My custom email prompt", before.prompt)
+    }
+
+    @Test
     fun findCommand_withFixTrigger_returnsFixCommand() {
         val result = commandManager.findCommand("hello world?fix")
         assertNotNull(result)
