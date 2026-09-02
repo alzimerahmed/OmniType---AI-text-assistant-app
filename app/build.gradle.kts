@@ -60,6 +60,7 @@ android {
                 storePassword = ksPassword
                 keyAlias = ksAlias
                 keyPassword = ksKeyPassword
+                storeType = "JKS"
             }
         }
     }
