@@ -106,9 +106,9 @@ class CommandManagerTest {
     // --- getCommands ---
 
     @Test
-    fun getCommands_returnsFourteenBuiltInByDefault() {
+    fun getCommands_returnsTwentyFourBuiltInByDefault() {
         val commands = commandManager.getCommands()
-        assertEquals(14, commands.size)
+        assertEquals(24, commands.size)
     }
 
     @Test
@@ -123,9 +123,9 @@ class CommandManagerTest {
     @Test
     fun getCommands_aiCommandsHaveIsBuiltInFalse() {
         val commands = commandManager.getCommands()
-        val aiTriggers = listOf("?fix", "?improve", "?shorten", "?expand", "?formal", "?casual", "?emoji", "?human", "?reply")
+        val aiTriggers = listOf("?fix", "?improve", "?shorten", "?expand", "?formal", "?casual", "?emoji", "?human", "?reply", "?rephrase", "?simplify", "?bullet", "?tldr", "?polite", "?explain", "?email", "?continue", "?eli5", "?positive")
         val aiCommands = commands.filter { it.trigger in aiTriggers }
-        assertEquals(9, aiCommands.size)
+        assertEquals(19, aiCommands.size)
         assertTrue(aiCommands.all { !it.isBuiltIn })
     }
 
@@ -133,7 +133,7 @@ class CommandManagerTest {
     fun getCommands_afterAddingCustom_includesIt() {
         commandManager.saveCustomCommand(Command("?myCmd", "do something"))
         val commands = commandManager.getCommands()
-        assertEquals(15, commands.size)
+        assertEquals(25, commands.size)
         assertTrue(commands.any { it.trigger == "?myCmd" })
     }
 

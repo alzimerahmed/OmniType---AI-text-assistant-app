@@ -27,8 +27,8 @@ class HistoryManagerTest {
         historyManager.record("?formal", "hi", "Good afternoon")
         val entries = historyManager.getEntries()
         org.junit.Assert.assertEquals(2, entries.size)
-        org.junit.Assert.assertEquals("?fix", entries[0].trigger)
-        org.junit.Assert.assertEquals("Hello", entries[0].result)
+        org.junit.Assert.assertEquals("?formal", entries[0].trigger)
+        org.junit.Assert.assertEquals("Good afternoon", entries[0].result)
     }
 
     @Test
