@@ -1,0 +1,1 @@
+- fix(keys): fall back to key without unlocked-device requirement when keystore rejects it
