@@ -53,36 +53,53 @@ internal class AndroidKeystoreCipher : KeyCipher {
         private set
 
     init {
-        try {
+        available = try {
             val keyStore = KeyStore.getInstance(ANDROID_KEYSTORE)
             keyStore.load(null)
             if (!keyStore.containsAlias(KEY_ALIAS)) {
-                val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, ANDROID_KEYSTORE)
-                keyGenerator.init(
-                    KeyGenParameterSpec.Builder(
-                        KEY_ALIAS,
-                        KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
-                    )
-                        .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
-                        .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
-                        .setKeySize(256)
-                        .apply {
-                            // Keys are only ever needed while the user is actively typing, so
-                            // requiring an unlocked device costs nothing and stops the stored
-                            // API keys from being decryptable on a locked device. Applies to
-                            // newly generated keys only; existing installs keep theirs.
-                            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P) {
-                                setUnlockedDeviceRequired(true)
-                            }
-                        }
-                        .build()
-                )
-                keyGenerator.generateKey()
+                try {
+                    generateKey(unlockedDeviceRequired = true)
+                } catch (strictException: Exception) {
+                    // Some OEM keystore HALs (notably MIUI/HyperOS) reject keys that require an
+                    // unlocked device even when a screen lock is set, which made the whole
+                    // cipher unavailable. Fall back to a key without that gate: the key is
+                    // still hardware-backed and non-exportable, only decryptable while the
+                    // device is booted rather than unlocked.
+                    android.util.Log.w("KeyCipher", "Strict key generation failed; retrying without unlocked-device requirement", strictException)
+                    generateKey(unlockedDeviceRequired = false)
+                }
             }
+            true
         } catch (e: Exception) {
             android.util.Log.e("KeyCipher", "Keystore init failed", e)
-            available = false
+            false
         }
+    }
+
+    private fun generateKey(unlockedDeviceRequired: Boolean) {
+        val keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, ANDROID_KEYSTORE)
+        keyGenerator.init(
+            KeyGenParameterSpec.Builder(
+                KEY_ALIAS,
+                KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+            )
+                .setBlockModes(KeyProperties.BLOCK_MODE_GCM)
+                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE)
+                .setKeySize(256)
+                .apply {
+                    // Keys are only ever needed while the user is actively typing, so
+                    // requiring an unlocked device costs nothing and stops the stored
+                    // API keys from being decryptable on a locked device. Applies to
+                    // newly generated keys only; existing installs keep theirs.
+                    if (unlockedDeviceRequired &&
+                        android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.P
+                    ) {
+                        setUnlockedDeviceRequired(true)
+                    }
+                }
+                .build()
+        )
+        keyGenerator.generateKey()
     }
 
     private fun secretKey(): SecretKey? {
